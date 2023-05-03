@@ -1,0 +1,21 @@
+{
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.formatOnPaste": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.tabSize": 4,
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.autoIndent": "full",
+    "editor.cursorBlinking": "smooth",
+    "extensions.ignoreRecommendations": true,
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "cSpell.language": "en-US, pt-BR",
+    "cSpell.ignoreWords": ["branchs"]
+}
