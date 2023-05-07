@@ -2,12 +2,13 @@
   box-sizing: border-box ;
   padding: 0;
   margin: 0;
+
 }
 
 .center{
   max-width: 100%;
   margin: 0 auto;
-  padding:0 50%;
+  padding:0 2%;
   display: flex;
 }
 
@@ -18,17 +19,20 @@
   min-height: 100px;
 }
 
-menu{
+.menu{
   width: 100%;
   display: flex ;
   flex-direction: row;
   justify-content: space-between;
 }
 
+
 .menu h1{
   color:white;
   
 }
+
+
 .center a{
   color: white;
   text-decoration: none;
@@ -36,6 +40,43 @@ menu{
   padding: 3px 8px;
   border-radius: 5px;
   
+  
 }
 
+.Desc{
+  padding: 20px 0;
+  background-color: #cdd8e5;
+  text-align: center;
+
+}
+
+.Desc h2{
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.CTA {
+  padding: 50px 0;;
+  width: 100%;
+  background-image: url('Components/CTA-BG.jpeg');
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.CTA a{
+  color: white;
+  width: 15%;
+  height: 3%;
+  text-align: center;
+  background-color: aqua;
+  padding: 3px 8px;
+  margin: 10px auto;
+  margin-top: 12.5%;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+
+
+}
 
