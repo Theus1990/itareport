@@ -58,7 +58,7 @@
 .CTA {
   padding: 50px 0;;
   width: 100%;
-  background-image: url('Components/CTA-BG.jpeg');
+  background-image: url('components/header/CTA-BG.jpeg');
   background-position: center;
   background-size: cover;
   min-height: 400px;
