@@ -56,27 +56,42 @@
 }
 
 .CTA {
-  padding: 50px 0;;
+  padding: 250px 0;;
   width: 100%;
+  height: 100%;
   background-image: url('components/header/CTA-BG.jpeg');
   background-position: center;
   background-size: cover;
-  min-height: 400px;
 }
 
-.CTA a{
+.CTA-Bottom{
   color: white;
-  width: 15%;
-  height: 3%;
-  text-align: center;
+  width: max-content;
+  height: max-content;
   background-color: aqua;
-  padding: 3px 8px;
-  margin: 10px auto;
-  margin-top: 12.5%;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
+}
 
+.CTA-Bottom a{
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
 
+.CTA-Bottom:hover{
+  background-color: rgb(0, 0, 0);
+  color: white;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.CTA-Bottom:hover a{
+  color: white;
+  transition: 0.5s;
+  font-weight: bold;
 }
 

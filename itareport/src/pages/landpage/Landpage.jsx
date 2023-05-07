@@ -10,9 +10,9 @@ const Landpage = () => {
             </p>
         </div>
         <div className="CTA">
-        <div className="CTA-Bottom">
-            <a href="#">Ver Mapa de Denúncias</a>
-        </div>
+          <div className="CTA-Bottom d-flex flex-column m-auto">
+              <a href="#" className='d-flex p-10 text-center text-decoration-none'>Ver Mapa de Denúncias</a>
+          </div>
         </div>
     </div>
   )
