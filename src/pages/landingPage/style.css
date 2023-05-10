@@ -1,0 +1,43 @@
+.Desc {
+    padding: 20px 0;
+    background-color: #cdd8e5;
+    text-align: center;
+}
+
+.Desc h2 {
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+.CTA {
+    padding: 250px 0;
+    margin-bottom: 100px;
+    width: 100%;
+    height: 100%;
+    background-image: url("./CTA-BG.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
+.CTA-Bottom {
+    color: white;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.CTA-Bottom a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.CTA-Bottom:hover a {
+    color: white;
+    transition: 0.5s;
+    font-weight: bold;
+}
