@@ -1,14 +1,14 @@
-.footer{
+.footer {
     background-color: #181e1c;
     color: white;
 }
 
-.footer a{
+.footer a {
     text-decoration: none;
     color: white;
 }
 
-.footer a:hover{
+.footer a:hover {
     color: gray;
     background-color: white;
 }
