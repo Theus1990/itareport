@@ -61,7 +61,11 @@ export default function Register() {
                             />
                         </div>
                         <div className='col-12 align'>
-                            <button type='submit' className='btn btn-primary'>
+                            <button
+                                type='submit'
+                                formAction='/map/'
+                                className='btn btn-primary'
+                            >
                                 Cadastrar
                             </button>
                         </div>

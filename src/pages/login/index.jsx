@@ -33,7 +33,7 @@ export default function Login() {
                         <div className='col-12 align'>
                             <button
                                 type='submit'
-                                formAction='/'
+                                formAction='/map/'
                                 className='btn btn-primary'
                             >
                                 Cadastrar
