@@ -7,98 +7,62 @@ export default function Register() {
     return (
         <>
             <div className='register'>
-                <Header></Header>
-                <div className='container bg-light'>
-                    <form className='row g-3 text-dark'>
+                <Header />
+                <div className='container bg-light w-75'>
+                    <form className='row g-3 text-dark '>
+                        <div className='col-md-12'>
+                            <label for='inputName' className='form-label'>
+                                Nome Completo
+                            </label>
+                            <input
+                                type='text'
+                                className='form-control'
+                                id='inputName'
+                            />
+                        </div>
                         <div className='col-md-6'>
-                            <label for='inputEmail4' className='form-label'>
+                            <label for='inputEmail' className='form-label'>
                                 Email
                             </label>
                             <input
                                 type='email'
                                 className='form-control'
-                                id='inputEmail4'
+                                id='inputEmail'
                             />
                         </div>
                         <div className='col-md-6'>
-                            <label for='inputPassword4' className='form-label'>
-                                Password
+                            <label for='inputNumber' className='form-label'>
+                                CPF
+                            </label>
+                            <input
+                                type='number'
+                                className='form-control'
+                                id='inputNumber'
+                            />
+                        </div>
+                        <div className='col-md-6'>
+                            <label for='inputPassword' className='form-label'>
+                                Senha
                             </label>
                             <input
                                 type='password'
                                 className='form-control'
-                                id='inputPassword4'
-                            />
-                        </div>
-                        <div className='col-12'>
-                            <label for='inputAddress' className='form-label'>
-                                Address
-                            </label>
-                            <input
-                                type='text'
-                                className='form-control'
-                                id='inputAddress'
-                                placeholder='1234 Main St'
-                            />
-                        </div>
-                        <div className='col-12'>
-                            <label for='inputAddress2' className='form-label'>
-                                Address 2
-                            </label>
-                            <input
-                                type='text'
-                                className='form-control'
-                                id='inputAddress2'
-                                placeholder='Apartment, studio, or floor'
+                                id='inputPassword'
                             />
                         </div>
                         <div className='col-md-6'>
-                            <label for='inputCity' className='form-label'>
-                                City
+                            <label for='inputPassword' className='form-label'>
+                                Confirmação Senha
                             </label>
                             <input
-                                type='text'
+                                type='password'
                                 className='form-control'
-                                id='inputCity'
+                                id='inputPassword'
                             />
                         </div>
-                        <div className='col-md-4'>
-                            <label for='inputState' className='form-label'>
-                                State
-                            </label>
-                            <select id='inputState' className='form-select'>
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                        <div className='col-md-2'>
-                            <label for='inputZip' className='form-label'>
-                                Zip
-                            </label>
-                            <input
-                                type='text'
-                                className='form-control'
-                                id='inputZip'
-                            />
-                        </div>
-                        <div className='col-12'>
-                            <div className='form-check'>
-                                <input
-                                    className='form-check-input'
-                                    type='checkbox'
-                                    id='gridCheck'
-                                />
-                                <label
-                                    className='form-check-label'
-                                    for='gridCheck'
-                                >
-                                    Check me out
-                                </label>
-                            </div>
-                        </div>
-                        <div className='col-12'>
+                        <div className='col-12 align'>
                             <button type='submit' className='btn btn-primary'>
-                                Sign in
+                                Cadastrar
                             </button>
                         </div>
                     </form>
