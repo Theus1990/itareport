@@ -11,11 +11,6 @@ function Footer() {
                     </div>
                     <ul class='d-flex flex-column'>
                         <li>
-                            <a href='#' title='Sobre'>
-                                Equipe
-                            </a>
-                        </li>
-                        <li>
                             <a href='#'>Sobre o Projeto</a>
                         </li>
                         <li>

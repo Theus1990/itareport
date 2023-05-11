@@ -1,37 +1,48 @@
-import React from 'react'
+import React from "react"
+import Header from "../../components/header"
+import Footer from "../../components/footer"
+import "./style.css"
 
-export default function Login(){
+export default function Login() {
     return (
-        <div class="Container">
-            <div class="row align-items-center">
-                <div class="col-md-10 mx-auto col-lg-5">
-                    <form class="p-4 p-md-5 border rounded-3 bg-light">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" 
-                                   id="inputEmail" placeholder="E-mail">
-                            </input> 
-                                 <lavbel for="inputEmail">E-mail</lavbel>
-                        </div>
-                        <div class="form-floating">
-                            <input type="password" class="form-control"
-                                   id="inputPassword" placeholder="Senha">
-                            </input>
-                                 <label for="inputPassword">Senha</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="lembrar de mim"> Lembrar-me
-                                </input>
+        <>
+            <div className='register'>
+                <Header />
+                <div className='container bg-light'>
+                    <form className='row g-3 text-dark '>
+                        <div className='col-md-12'>
+                            <label for='inputEmail' className='form-label'>
+                                Email
                             </label>
+                            <input
+                                type='email'
+                                className='form-control'
+                                id='inputEmail'
+                            />
+                        </div>
+                        <div className='col-md-12'>
+                            <label for='inputPassword' className='form-label'>
+                                Senha
+                            </label>
+                            <input
+                                type='password'
+                                className='form-control'
+                                id='inputPassword'
+                            />
+                        </div>
+                        <div className='col-12 align'>
+                            <button
+                                type='submit'
+                                formAction='/map/'
+                                className='btn btn-primary'
+                            >
+                                Cadastrar
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
-
-        </div>
-          
-        
-        )
-
-
+            <Footer />
+        </>
+    )
 }
