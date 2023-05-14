@@ -5,7 +5,7 @@ function Header() {
         <nav class='navbar border-bottom border-secondary'>
             <div class='d-flex container-fluid justify-content-between'>
                 <a
-                    class='navbar-brand fs-4 justify-content-between align-items-center text-light'
+                    class='navbar-brand fs-4 justify-content-between align-items-center text-dark'
                     href='/'
                 >
                     ItaReport
@@ -14,10 +14,7 @@ function Header() {
                     <a class='btn btn-info me-3' href='/login/'>
                         Login
                     </a>
-                    <a
-                        class='text-light text-decoration-none'
-                        href='/register/'
-                    >
+                    <a class='text-dark text-decoration-none' href='/register/'>
                         Cadastrar
                     </a>
                 </div>

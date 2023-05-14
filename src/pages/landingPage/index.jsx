@@ -7,8 +7,8 @@ import cta from "./CTA-BG.jpeg"
 export default function LandingPage() {
     return (
         <>
+            <Header />
             <div className='landingpage'>
-                <Header />
                 <div>
                     <div className='Desc'>
                         <h2>Faça uma denúncia, faça a diferença!</h2> <br />
@@ -31,7 +31,7 @@ export default function LandingPage() {
                 <div className='card-group'>
                     <div className='card'>
                         <img src={cta} className='card-img-top' alt='...' />
-                        <div className='card-body'>
+                        <div className='card-body bg-light'>
                             <h5 className='card-title'>Card title</h5>
                             <p className='card-text'>
                                 This is a wider card with supporting text below
@@ -47,7 +47,7 @@ export default function LandingPage() {
                     </div>
                     <div className='card'>
                         <img src={cta} className='card-img-top' alt='...' />
-                        <div className='card-body'>
+                        <div className='card-body bg-light'>
                             <h5 className='card-title'>Card title</h5>
                             <p className='card-text'>
                                 This card has supporting text below as a natural
@@ -62,7 +62,7 @@ export default function LandingPage() {
                     </div>
                     <div className='card'>
                         <img src={cta} className='card-img-top' alt='...' />
-                        <div className='card-body'>
+                        <div className='card-body bg-light'>
                             <h5 className='card-title'>Card title</h5>
                             <p className='card-text'>
                                 This is a wider card with supporting text below
