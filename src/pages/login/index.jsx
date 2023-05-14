@@ -8,37 +8,53 @@ export default function Login() {
         <>
             <div className='register'>
                 <Header />
-                <div className='container bg-light'>
+                {/*form to login using bootstrap form-group to inputs */}
+                <div className='container bg-light w-50'>
                     <form className='row g-3 text-dark '>
-                        <div className='col-md-12'>
-                            <label for='inputEmail' className='form-label'>
-                                Email
-                            </label>
+                        <div className='form-group'>
+                            <label for='exampleInputEmail1'>Email</label>
                             <input
                                 type='email'
                                 className='form-control'
-                                id='inputEmail'
+                                id='exampleInputEmail1'
+                                aria-describedby='emailHelp'
                             />
+                            <small
+                                id='emailHelp'
+                                className='form-text text-muted'
+                            >
+                                Nunca iremos compartilhar seu email com mais
+                                ninguém.
+                            </small>
                         </div>
-                        <div className='col-md-12'>
-                            <label for='inputPassword' className='form-label'>
-                                Senha
-                            </label>
+                        <div className='form-group'>
+                            <label for='exampleInputPassword1'>Senha</label>
                             <input
                                 type='password'
                                 className='form-control'
-                                id='inputPassword'
+                                id='exampleInputPassword1'
                             />
                         </div>
-                        <div className='col-12 align'>
-                            <button
-                                type='submit'
-                                formAction='/map/'
-                                className='btn btn-primary'
+                        <div className='form-group form-check'>
+                            <input
+                                type='checkbox'
+                                className='form-check-input'
+                                id='exampleCheck1'
+                            />
+                            <label
+                                className='form-check-label'
+                                for='exampleCheck1'
                             >
-                                Cadastrar
-                            </button>
+                                Check me out
+                            </label>
                         </div>
+                        <button
+                            type='submit'
+                            formAction='/map/'
+                            className='btn btn-info col-md-2'
+                        >
+                            Login
+                        </button>
                     </form>
                 </div>
             </div>

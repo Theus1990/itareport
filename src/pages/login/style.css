@@ -2,10 +2,3 @@
     height: 100vh;
     background-color: rgb(86, 86, 86);
 }
-
-.login .Container {
-    margin-top: 100px;
-    padding: 1% 1% 1% 1%;
-    border-radius: 10px;
-    background-color: white;
-}

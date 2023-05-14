@@ -8,7 +8,7 @@ export default function Map() {
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY
     })
-    const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), [])
+    const center = useMemo(() => ({ lat: -3.684793, lng: -39.586745 }), [])
 
     return (
         <div className='mapa'>
@@ -24,7 +24,7 @@ export default function Map() {
                     <GoogleMap
                         mapContainerClassName='map-container'
                         center={center}
-                        zoom={10}
+                        zoom={15}
                     />
                     <Footer />
                 </>

@@ -1,6 +1,6 @@
-.landingpage {
+body {
+    height: max-content;
     background-color: #cdd8e5;
-    height: 100vh;
 }
 
 .Desc {
@@ -42,4 +42,16 @@
     color: white;
     transition: 0.5s;
     font-weight: bold;
+}
+
+.card-group {
+    margin-top: 100px;
+}
+.card-group .card-body {
+    background-color: #181e1c;
+    color: white;
+}
+
+.footer {
+    margin-top: 100px;
 }
