@@ -48,6 +48,10 @@ body {
     margin-top: 100px;
 }
 
+.card-body {
+    background-color: #181e1c;
+}
+
 .landingpage ~ Footer {
     margin-top: 100px;
 }
