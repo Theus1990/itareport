@@ -4,6 +4,8 @@ import Register from "../pages/register"
 import Login from "../pages/login"
 import Map from "../pages/reportMap"
 import Form from "../pages/forms"
+import AboutUS from "../pages/aboutUs"
+
 
 export default function Routing() {
     return (
@@ -13,6 +15,7 @@ export default function Routing() {
             <Route path='login/' element={<Login />} />
             <Route path='map/' element={<Map />} />
             <Route path='forms/' element={<Form />} />
+            <Route path= '/aboutus/' element={<AboutUS />} />
         </Routes>
     )
 }
