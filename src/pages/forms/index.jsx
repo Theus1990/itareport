@@ -49,13 +49,13 @@ export default function Forms() {
               </label>
               <textarea className="form-control" id="inputDescricao" />
             </div>
-            <div className="col-6">
+            <div className="col-lg-6 col-md-12 col-sm-12">
               <label for="inputImagem" className="form-label">
                 Insira uma imagem do report abaixo:
               </label>
               <input type="file" className="form-control" id="inputImagem" />
             </div>
-            <div className="col-6">
+            <div className="col-lg-6 col-md-12 col-sm-12">
               <button type="submit" className="btn btn-primary">
                 Enviar
               </button>
