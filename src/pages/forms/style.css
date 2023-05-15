@@ -1,37 +1,37 @@
 .forms {
-  background-color: white;
-  height: max-content;
+    background-color: white;
+    height: max-content;
 }
 .forms .container {
-  margin-top: 30px;
-  margin-bottom: 40px;
-  padding: 1% 1% 1% 1%;
-  border-radius: 10px;
-  background-color: white;
-  width: 70%;
-  height: 70%;
-}
-h2 {
-  text-align: center;
-  margin-bottom: 2%;
-}
-
-#inputDescricao {
-  height: 70%;
-}
-button {
-  margin-top: 6%;
-  margin-left: 40%;
-}
-
-@media (max-height: 657) {
-  .forms .container {
     margin-top: 30px;
     margin-bottom: 40px;
     padding: 1% 1% 1% 1%;
     border-radius: 10px;
     background-color: white;
     width: 70%;
-    height: 79%;
-  }
+    height: 70%;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 2%;
+}
 
+#inputDescricao {
+    height: 70%;
+}
+button {
+    margin-top: 6%;
+    margin-left: 40%;
+}
+
+@media (max-height: 657) {
+    .forms .container {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        padding: 1% 1% 1% 1%;
+        border-radius: 10px;
+        background-color: white;
+        width: 70%;
+        height: 79%;
+    }
+}

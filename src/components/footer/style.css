@@ -4,11 +4,10 @@
 }
 
 .footer a {
-    text-decoration: none;
     color: white;
 }
 
 .footer a:hover {
-    color: gray;
-    background-color: white;
+    color: rgb(69, 69, 69);
+    background-color: cornflowerblue;
 }

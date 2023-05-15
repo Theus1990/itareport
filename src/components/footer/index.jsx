@@ -16,7 +16,7 @@ function Footer() {
         >
             <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'></section>
 
-            <section className=''>
+            <section className='footer'>
                 <MDBContainer className='text-center text-md-start mt-5'>
                     <MDBRow className='mt-3'>
                         <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
@@ -108,17 +108,8 @@ function Footer() {
                 </MDBContainer>
             </section>
 
-            <div
-                className='text-center p-4'
-                style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-            >
-                © 2021 Copyright:
-                <a
-                    className='text-reset fw-bold'
-                    href='https://mdbootstrap.com/'
-                >
-                    MDBootstrap.com
-                </a>
+            <div className='text-light text-center p-4 bg-dark'>
+                © 2023 Copyright: ItaReport
             </div>
         </MDBFooter>
     )
