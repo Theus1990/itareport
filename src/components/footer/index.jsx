@@ -75,6 +75,11 @@ function Footer() {
                                     Sugestões
                                 </a>
                             </p>
+                            <p>
+                                <a href='/aboutUs/' className='text-reset'>
+                                    Sobre Nós
+                                </a>
+                            </p>
                         </MDBCol>
 
                         <MDBCol
