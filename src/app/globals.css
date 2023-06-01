@@ -30,10 +30,17 @@
     --highlightColor: var(--orange-300);
 }
 
-/*************** HEADER ***************/
+/*************** BODY ***************/
 
 body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
 }
+
+/*************** HEADER ***************/
 
 /*************** MAPA ***************/
 /* map style */
@@ -69,6 +76,25 @@ body {
 
 .leaflet-popup-tip-container {
     display: none;
+}
+
+/*************** LOGIN & REGISTRO ***************/
+
+.register {
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--deepBlue);
+}
+
+/*login and register form div*/
+.register .container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
 }
 
 /*************** FOOTER ***************/
