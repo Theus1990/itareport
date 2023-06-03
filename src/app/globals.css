@@ -80,21 +80,12 @@ body {
 
 /*************** LOGIN & REGISTRO ***************/
 
-.register {
-    flex-flow: row wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: var(--deepBlue);
+.form-login {
+    width: 80vh;
 }
 
-/*login and register form div*/
-.register .container {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    align-content: center;
+.form-register {
+    width: 90vh;
 }
 
 /*************** FOOTER ***************/
