@@ -9,11 +9,11 @@ export default function Login() {
     return (
         <>
             <Header />
-            {/*form to login using bootstrap form-group to inputs */}
+
             <div class='flex justify-center items-center pt-48 pb-48'>
                 <div class='form-login p-6 shadow-lg bg-slate-50 rounded-md'>
                     <h1 class='text-3xl block text-center font-semibold'>
-                        <i class='fa-solid fa-user'></i> Login
+                        Login
                     </h1>
                     <hr class='mt-3' />
                     <div class='mt-3'>
@@ -54,8 +54,7 @@ export default function Login() {
                             type='submit'
                             class='border-2 border-gray-900 bg-gray-900 text-white py-1 w-full rounded-md hover:bg-transparent hover:text-gray-900 font-semibold'
                         >
-                            <i class='fa-solid fa-right-to-bracket'></i>
-                            &nbsp;&nbsp;Login
+                            Login
                         </button>
                     </div>
                 </div>

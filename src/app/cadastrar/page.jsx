@@ -7,10 +7,10 @@ export default function Register() {
         <>
             <div className='register'>
                 <Header />
-                <div class='flex justify-center items-center pt-36 pb-36'>
+                <form class='flex justify-center items-center pt-36 pb-36'>
                     <div class='form-register grid grid-cols-2 gap-3 p-6 shadow-lg bg-slate-50 rounded-md'>
                         <h1 class='text-3xl block text-center font-semibold col-span-2'>
-                            <i class='fa-solid fa-user'></i> Cadastro
+                            Cadastro
                         </h1>
                         <hr class='mt-3 col-span-2' />
                         <div class='mt-3 col-span-2'>
@@ -87,7 +87,7 @@ export default function Register() {
                             </button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
             <Footer />
         </>
