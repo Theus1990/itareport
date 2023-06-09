@@ -155,3 +155,44 @@ footer {
     font-size: 14px;
     line-height: 50px;
 }
+
+/*************** PAGE sobre ***************/
+.card-group {
+     height: 100%;
+     margin: auto;
+     margin-top: 5%;
+     padding-top: 5%;
+     
+}
+
+.card-eric {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    padding: 5% 5% 5% 5%;;
+    min-width:30%;
+    float: left;
+    margin-left: 2%;
+    
+    
+}
+
+.card-lucas {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    padding: 5% 5% 5% 5%;
+    min-width:30%;
+    margin-left: 3%;
+  
+}
+
+.card-matheus {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    padding: 5% 5% 5% 5%;
+    min-width:30%;
+    float: right;
+    margin-right: 2%;
+}

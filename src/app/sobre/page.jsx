@@ -11,8 +11,8 @@ import linkedin from "../../../public/sobre/linkedin.svg"
 function Sobre() {
     return (
         <>
-            <Header />
-
+            <Header /> 
+            
             <div className='title'>
                 <h1 className='text-center'>Quem somos?</h1>
                 <p className='text-center'>
@@ -23,7 +23,7 @@ function Sobre() {
             </div>
 
             <div className='card-group text-light'>
-                <div className='card'>
+                <div className='card-eric max-w-sm rounded overflow-hidden shadow-lg'>
                     <div className='Image'>
                         <Image
                             className='rounded-full'
@@ -70,7 +70,7 @@ function Sobre() {
                         </p>
                     </div>
                 </div>
-                <div className='card'>
+                <div className='card-lucas max-w-sm rounded overflow-hidden shadow-lg'>
                     <div className='Image'>
                         <Image
                             className='rounded-full'
@@ -114,7 +114,7 @@ function Sobre() {
                         </p>
                     </div>
                 </div>
-                <div className='card'>
+                <div className='card-matheus max-w-sm rounded overflow-hidden shadow-lg'>
                     <div className='Image'>
                         <Image
                             className='rounded-full'
