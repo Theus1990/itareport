@@ -26,7 +26,7 @@ function Sobre() {
                 <div className='card'>
                     <div className='Image'>
                         <Image
-                            className='rounded-circle'
+                            className='rounded-full'
                             src={eric}
                             height={400}
                             width={400}
@@ -73,7 +73,7 @@ function Sobre() {
                 <div className='card'>
                     <div className='Image'>
                         <Image
-                            className='rounded-circle'
+                            className='rounded-full'
                             src={lucas}
                             height={400}
                             width={400}
@@ -117,7 +117,7 @@ function Sobre() {
                 <div className='card'>
                     <div className='Image'>
                         <Image
-                            className='rounded-circle'
+                            className='rounded-full'
                             src={matheus}
                             height={400}
                             width={400}
