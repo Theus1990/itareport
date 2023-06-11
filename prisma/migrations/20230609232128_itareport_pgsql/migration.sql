@@ -19,8 +19,6 @@ CREATE TABLE "Denuncia" (
     "title" VARCHAR(255) NOT NULL,
     "content" TEXT NOT NULL,
     "userId" UUID NOT NULL,
-    "categoriaId" UUID NOT NULL,
-    "enderecoId" UUID NOT NULL,
 
     CONSTRAINT "Denuncia_pkey" PRIMARY KEY ("id_report")
 );

@@ -1,17 +1,49 @@
 "use client"
 
-import React from "react"
+import { React, useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import Head from "next/head"
 
 export default function Login() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+
+        try {
+            const usuario = await prisma.usuario.findUnique({
+                where: {
+                    email: email
+                }
+            })
+
+            if (!usuario) {
+                throw new Error("Usuário não encontrado")
+            }
+
+            if (usuario.senha !== password) {
+                throw new Error("Senha incorreta")
+            }
+
+            // Successful login
+            console.log("Login successful")
+        } catch (error) {
+            // Handle errors
+            console.error("Login failed:", error)
+        } finally {
+            await prisma.$disconnect()
+        }
+    }
+
     return (
         <>
             <Header />
-
             <div class='flex justify-center items-center pt-48 pb-48'>
-                <div class='form-login p-6 shadow-lg bg-slate-50 rounded-md'>
+                <form
+                    class='form-login p-6 shadow-lg bg-slate-50 rounded-md'
+                    onSubmit={handleSubmit}
+                >
                     <h1 class='text-3xl block text-center font-semibold'>
                         Login
                     </h1>
@@ -24,7 +56,9 @@ export default function Login() {
                             type='text'
                             id='email'
                             class='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
-                            placeholder='Digite seu e-Mail...'
+                            placeholder='Digite seu email...'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div class='mt-3'>
@@ -36,6 +70,8 @@ export default function Login() {
                             id='password'
                             class='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
                             placeholder='Digite sua senha...'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     <div class='mt-3 flex justify-between items-center'>
@@ -57,7 +93,7 @@ export default function Login() {
                             Login
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
             <Footer />
         </>

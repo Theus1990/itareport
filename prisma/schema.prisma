@@ -30,12 +30,13 @@ model Denuncia {
   title       String    @db.VarChar(255)
   content     String    @db.Text
   userId      String    @db.Uuid
-  categoriaId String    @db.Uuid
-  enderecoId  String    @db.Uuid
   user        Usuario   @relation(fields: [userId], references: [id_user])
+}
+  //categoriaId String    @db.Uuid
+  //enderecoId  String    @db.Uuid
   //Categoria   Categoria @relation(fields: [categoriaId], references: [id_report])
   //Endereco    Endereco  @relation(fields: [enderecoId], references: [id_endereco])
-}
+
 
 
 //model Categoria {
