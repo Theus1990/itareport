@@ -34,7 +34,7 @@
         "src/app/components/footer.jsx",
         "src/app/components/header.jsx",
         "src/app/mapa/page.jsx",
-        "src/app/api/usuario/route.js"
+        "src/app/api/registrar_usuario/route.js"
     ],
     "exclude": ["node_modules"]
 }
