@@ -1,12 +1,14 @@
-import React from "react"
-import Image from "next/image"
-import Header from "./components/header"
-import Footer from "./components/footer"
-import cta from "../../public/img/CTA-BG.jpeg"
+import Image from 'next/image'
+import { Inter } from 'next/font/google'
+import Header from './components/header'
+import Footer from './components/footer'
+import cta from '../public/img/CTA-BG.jpeg'
 
-export default function LandingPage() {
-    return (
-        <>
+const inter = Inter({ subsets: ['latin'] })
+
+export default function Home() {
+  return (
+    <>
             <Header />
             <div className='landingpage'>
                 <div>
@@ -81,5 +83,5 @@ export default function LandingPage() {
             </div>
             <Footer />
         </>
-    )
+  )
 }

@@ -1,14 +1,16 @@
+import Link from "next/link"
+
 function Header() {
     return (
         <header className='flex items-center justify-between bg-gray-900 py-10 px-6'>
             <div className='text-white text-3xl font-bold'>
-                <a href='/'>ItaReport</a>
+                <Link href='/'>ItaReport</Link>
             </div>
             <nav className='space-x-5'>
                 <a href='/formDenuncia/' className='text-white'>
                     Fazer Denúncia
                 </a>
-                <a href='/login' className='text-white'>
+                <a href='../login' className='text-white'>
                     Logar
                 </a>
                 <a
