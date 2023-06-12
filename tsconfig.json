@@ -33,7 +33,8 @@
         "src/app/cadastrar/page.jsx",
         "src/app/components/footer.jsx",
         "src/app/components/header.jsx",
-        "src/app/mapa/page.jsx"
+        "src/app/mapa/page.jsx",
+        "src/app/api/registrar_usuario/route.js"
     ],
     "exclude": ["node_modules"]
 }
