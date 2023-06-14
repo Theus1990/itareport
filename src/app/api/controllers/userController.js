@@ -2,6 +2,8 @@ import {
   createUserService,
   getUserByEmail,
   updateUserEmail,
+  updateUserName,
+  updateUserPassowrd,
 } from "../services/usuarioService";
 
 async function createUser(data) {
@@ -46,12 +48,26 @@ async function updateUser(data) {
 
   try {
     const existingUser = await getUserByEmail(emailNew);
-    if (existingUser) {
+    if (!existingUser) {
       const newEmail = await updateUserEmail(emailOld, emailNew);
       if (newEmail) {
         return {
           status: 200,
           json: { message: "O email foi atualizado" },
+        };
+      }
+      const newName = await updateUserName(email, name);
+      if (newName) {
+        return {
+          status: 200,
+          json: { message: "O nome foi atualizado" },
+        };
+      }
+      const newPassword = await updateUserPassowrd(email, password);
+      if (newPassword) {
+        return {
+          status: 200,
+          json: { message: "Senha atualizada com sucesso" },
         };
       }
     }

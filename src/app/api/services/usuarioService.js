@@ -3,7 +3,7 @@ import prismaClient from "../config/server/db/prismaClient";
 
 export async function createUserService(name, email, cpf, password) {
   try {
-    const usuario = await prismaClient.usuario.create({
+    const user = await prismaClient.usuario.create({
       data: {
         name,
         email,
@@ -38,7 +38,32 @@ export async function updateUserEmail(emailOld, emailNew) {
       where: { email: emailOld },
       data: { email: emailNew },
     });
+    return email;
   } catch (error) {
     throw new Error("Erro ao atualizar email");
+  }
+}
+
+export async function updateUserName(email, nome) {
+  try {
+    const name = await prisma.user.update({
+      where: { email: email },
+      data: { name: nome },
+    });
+    return name;
+  } catch (error) {
+    throw new Error("Erro ao atualizar o nome");
+  }
+}
+
+export async function updateUserPassowrd(email, senha) {
+  try {
+    const password = await prisma.user.update({
+      where: { email: email },
+      data: { password: senha },
+    });
+    return password;
+  } catch (error) {
+    throw new Error("Erro ao atualizar o nome");
   }
 }
