@@ -1,4 +1,4 @@
-import prismaClient from "../../../../server/db/prisma"
+import prismaClient from "../config/server/db/prismaClient"
 
 export async function POST(request) {
     try {
