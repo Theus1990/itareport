@@ -159,6 +159,7 @@ footer {
 /*************** PAGE sobre ***************/
 .card-group {
      height: 100%;
+     width: 100%;
      margin: auto;
      margin-top: 5%;
      padding-top: 5%;
@@ -166,33 +167,50 @@ footer {
 }
 
 .card-eric {
-    width: 30%;
+    width: 32%;
     display: inline-block;
-    text-align: center;
     padding: 5% 5% 5% 5%;;
-    min-width:30%;
-    float: left;
-    margin-left: 2%;
+    min-width: 32%;
+    margin-left: 1%;
     
     
 }
 
 .card-lucas {
-    width: 30%;
+    width: 32%;
     display: inline-block;
-    text-align: center;
     padding: 5% 5% 5% 5%;
-    min-width:30%;
-    margin-left: 3%;
+    min-width: 32%;
+    margin-left: 1%;
+    margin-right: 1%;
+    
   
 }
 
 .card-matheus {
-    width: 30%;
+    width: 32%;
     display: inline-block;
-    text-align: center;
     padding: 5% 5% 5% 5%;
-    min-width:30%;
-    float: right;
-    margin-right: 2%;
+    min-width: 32%;
+    margin-right: 1%;
 }
+
+.card-body{
+    width: 100%;
+  
+}
+
+.card-title {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.card-text{
+    margin-block-end: 5%;
+    
+}
+
+.link{
+    color: #0089a5;
+}
+ 
