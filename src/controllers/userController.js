@@ -2,7 +2,7 @@ const userService = require("../services/usuarioService");
 
 async function createUser(req, res) {
   try {
-    const { name, email, password } = req.body;
+    const { name, cpf, email, password } = req.body;
     let usuario = await userService.findUserByEmail(email);
 
     if (usuario) {
@@ -13,7 +13,7 @@ async function createUser(req, res) {
       });
     }
 
-    usuario = await userService.createUser(name, email, password);
+    usuario = await userService.createUser(name, cpf, email, password);
 
     return res.json({
       success: true,
