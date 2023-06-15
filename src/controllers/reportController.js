@@ -1,11 +1,14 @@
 const reportService = require("../services/reportService");
+const userService = require("../services/usuarioService");
+
 
 async function createReport(req, res) {
   try {
     const { id } = req.params;
+    const user = userService.findUserById(id); 
     const { title, content, adress } = req.body;
     
-    let report = await reportService.createReport(title, content, adress, id);
+    let report = await reportService.createReport(title, content, adress, user);
 
     return res.json({
       success: true,
