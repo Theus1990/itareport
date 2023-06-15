@@ -11,8 +11,8 @@ import linkedin from "../../../public/sobre/linkedin.svg"
 function Sobre() {
     return (
         <>
-            <Header />
-
+            <Header /> 
+            
             <div className='title'>
                 <h1 className='text-center'>Quem somos?</h1>
                 <p className='text-center'>
@@ -22,141 +22,134 @@ function Sobre() {
                 </p>
             </div>
 
-            <div className='card-group text-light'>
-                <div className='card'>
+            <div className='card-group'>
+                <div className='card-eric max-w-sm rounded overflow-hidden shadow-lg'>
                     <div className='Image'>
                         <Image
-                            className='rounded-circle'
+                            className='rounded-full'
                             src={eric}
                             height={400}
                             width={400}
                         />
                     </div>
                     <div className='card-body'>
-                        <h5 className='card-title'>Eric</h5>
+                        <h5 className='card-title text-2xl text-center'>Eric</h5>
                         <p className='card-text'>Desenvolvedor.</p>
                         <p className='card-text'>
                             Responsável por desenvolver e programar o Front-end.
                         </p>
+                        <div className="flex items-stretch">
+                        <Image
+                            src={linkedin}
+                            width='30'
+                            height='30'
+                            className='icon pb-2'
+                        />
                         <a
                             href='https://www.linkedin.com/in/eric-mesquita-3826a7180/'
                             target='_blank'
-                        >
-                            <Image
-                                src={linkedin}
-                                width='30'
-                                height='30'
-                                className='bg-light'
-                            />{" "}
-                            linkedin.com/in/eric-mesquita
-                        </a>{" "}
-                        <br />
+                            className="link text-center ps-2">linkedin.com/in/eric-mesquita
+                        </a>
+                        </div>
+                        <div className="flex items-stretch">
+                        <Image
+                            src={github}
+                            width='30'
+                            height='30'
+                            className='icon pb-2'
+                        />
                         <a
                             href='https://github.com/EricmesquiBR'
                             target='_blank'
-                        >
-                            <Image
-                                src={github}
-                                width='30'
-                                height='30'
-                                className='bg-light'
-                            />{" "}
-                            https://github.com/EricmesquiBR
+                            className="link text-center ps-2">https://github.com/EricmesquiBR
                         </a>
-                        <p className='card-text'>
-                            <small className='text-muted'>
-                                Última atualização 15/05/2023
-                            </small>
-                        </p>
+                        </div>  
                     </div>
                 </div>
-                <div className='card'>
+                <div className='card-lucas max-w-sm rounded overflow-hidden shadow-lg'>
                     <div className='Image'>
                         <Image
-                            className='rounded-circle'
+                            className='rounded-full'
                             src={lucas}
                             height={400}
                             width={400}
                         />
                     </div>
                     <div className='card-body'>
-                        <h5 className='card-title'>Lucas</h5>
+                        <h5 className='card-title text-2xl text-center'>Lucas</h5>
                         <p className='card-text'>Desenvolvedor.</p>
                         <p className='card-text'>
                             Responsável por desenvolver e programar o Back-End.
                         </p>
+                        <div className="flex items-stretch">
+                        <Image
+                            src={linkedin}
+                            width='30'
+                            height='30'
+                            className='icon pb-2'
+                        />
                         <a
                             href='https://www.linkedin.com/in/lucas-sousa-689b6a236/'
                             target='_blank'
-                        >
-                            <Image
-                                src={linkedin}
-                                width='30'
-                                height='30'
-                                className='bg-light'
-                            />{" "}
+                            className="link text-center ps-2">
                             linkedin.com/in/lucas-sousa
-                        </a>{" "}
-                        <br />
-                        <a href='https://github.com/1M0RR1V3L' target='_blank'>
-                            <Image
-                                src={github}
-                                width='30'
-                                height='30'
-                                className='bg-light'
-                            />{" "}
-                            https://github.com/1M0RR1V3L
                         </a>
-                        <p className='card-text'>
-                            <small className='text-muted'>
-                                Última atualização 15/05/2023
-                            </small>
-                        </p>
+                        </div>
+                        <div className="flex items-stretch">
+                        <Image
+                            src={github}
+                            width='30'
+                            height='30'
+                            className='icon pb-2'
+                        />
+                        <a href='https://github.com/1M0RR1V3L' 
+                           target='_blank'
+                           className="link text-center ps-2">https://github.com/1M0RR1V3L
+                        </a>
+                        </div>
                     </div>
                 </div>
-                <div className='card'>
+                <div className='card-matheus max-w-sm rounded overflow-hidden shadow-lg'>
                     <div className='Image'>
                         <Image
-                            className='rounded-circle'
+                            className='rounded-full'
                             src={matheus}
                             height={400}
                             width={400}
                         />
                     </div>
                     <div className='card-body'>
-                        <h5 className='card-title'>Matheus</h5>
+                        <h5 className='card-title text-2xl text-center'>Matheus</h5>
                         <p className='card-text'>Desenvolvedor e BDA.</p>
                         <p className='card-text'>
                             Responsável pela modelagem, criação e manipulação do
                             Banco de Dados.
                         </p>
+                        <div className="flex items-stretch">
+                        <Image
+                            src={linkedin}
+                            width='30'
+                            height='30'
+                            className='icon pb-2'
+                        /> 
                         <a
                             href='https://www.linkedin.com/in/matheus-feitosa-de-oliveira-rabelo/'
                             target='_blank'
-                        >
-                            <Image
-                                src={linkedin}
-                                width='30'
-                                height='30'
-                                className='bg-light'
-                            />{" "}
-                            linkedin.com/in/matheus-feitosa
-                        </a>{" "}
-                        <br />
-                        <a href='https://github.com/Theus1990' target='_blank'>
-                            <Image
-                                src={github}
-                                width='30'
-                                height='30'
-                                className='bg-light'
-                            />{" "}
-                            https://github.com/Theus1990
+                            className="link text-center ps-2">linkedin.com/in/matheus-feitosa                     
                         </a>
-                        <p className='card-text'>
-                            <small className='text-muted'>
-                                Última atualização 15/05/2023
-                            </small>
-                        </p>
+                        </div>
+                        <div className="flex items-stretch">
+                        <Image
+                            src={github}
+                            width='30'
+                            height='30'
+                            className='icon pb-2'    
+                        />
+                        <a href='https://github.com/Theus1990' 
+                           target='_blank'
+                           className="link text-center ps-2">https://github.com/Theus1990
+                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
