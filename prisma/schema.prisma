@@ -29,6 +29,7 @@ model Denuncia {
   validated   Boolean   @default(false)
   title       String    @db.VarChar(255)
   content     String    @db.Text
+  adress      String    @db.VarChar(255)
   userId      String    @db.Uuid
   user        Usuario   @relation(fields: [userId], references: [id_user])
 }
