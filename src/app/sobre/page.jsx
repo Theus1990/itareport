@@ -122,8 +122,8 @@ function Sobre() {
                         <h5 className='card-title text-2xl text-center'>Matheus</h5>
                         <p className='card-text'>Desenvolvedor e BDA.</p>
                         <p className='card-text'>
-                            Responsável pela modelagem, criação e manipulação do
-                            Banco de Dados.
+                            Responsável pela modelagem, criação e manipulação do BD.
+                           
                         </p>
                         <div className="flex items-stretch">
                         <Image
