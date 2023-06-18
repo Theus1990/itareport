@@ -18,6 +18,7 @@ CREATE TABLE "Denuncia" (
     "validated" BOOLEAN NOT NULL DEFAULT false,
     "title" VARCHAR(255) NOT NULL,
     "content" TEXT NOT NULL,
+    "adress" VARCHAR(255) NOT NULL,
     "userId" UUID NOT NULL,
 
     CONSTRAINT "Denuncia_pkey" PRIMARY KEY ("id_report")

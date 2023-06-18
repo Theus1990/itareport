@@ -1,11 +1,12 @@
 const express = require("express");
 const userRoutes = require("./api/userRoute");
+const reportRoutes = require("./api/reportRoute");
 const config = require("./config/default");
 
 const app = express();
 
 app.use(express.json());
-app.use(userRoutes);
+app.use(userRoutes, reportRoutes);
 
 const PORT = config.server.port;
 const HOST = config.server.host;
