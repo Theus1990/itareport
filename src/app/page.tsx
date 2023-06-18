@@ -19,12 +19,16 @@ export default function LandingPage() {
                     </div>
                     <div className='CTA'>
                         <div className='CTA-Bottom'>
-                            <a
+                            <div className="BG-CTA-Bottom card-img-top flex justify-center items-center">
+                                 <Image src={cta} className='cta-img' alt='...' />
+                                 <a
                                 href='/mapa/'
-                                className='rounded border-black border-2 bg-gray-500 text-gray-200 p-4'
+                                className='rounded border-black border-2 bg-gray-500 text-gray-200 p-4 absolute'
                             >
                                 Ver Mapa de Denúncias
                             </a>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
