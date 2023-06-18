@@ -32,7 +32,7 @@ function Sobre() {
                             width={400}
                         />
                     </div>
-                    <div className='card-body'>
+                    <div className='card-body text-center'>
                         <h5 className='card-title text-2xl text-center'>Eric</h5>
                         <p className='card-text'>Desenvolvedor.</p>
                         <p className='card-text'>
@@ -75,8 +75,8 @@ function Sobre() {
                             width={400}
                         />
                     </div>
-                    <div className='card-body'>
-                        <h5 className='card-title text-2xl text-center'>Lucas</h5>
+                    <div className='card-body text-center'>
+                        <h5 className='card-title text-2xl'>Lucas</h5>
                         <p className='card-text'>Desenvolvedor.</p>
                         <p className='card-text'>
                             Responsável por desenvolver e programar o Back-End.
@@ -118,8 +118,8 @@ function Sobre() {
                             width={400}
                         />
                     </div>
-                    <div className='card-body'>
-                        <h5 className='card-title text-2xl text-center'>Matheus</h5>
+                    <div className='card-body text-center'>
+                        <h5 className='card-title text-2xl'>Matheus</h5>
                         <p className='card-text'>Desenvolvedor e BDA.</p>
                         <p className='card-text'>
                             Responsável pela modelagem, criação e manipulação do BD.
