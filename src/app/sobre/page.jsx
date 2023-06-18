@@ -14,7 +14,7 @@ function Sobre() {
             <Header /> 
             
             <div className='title'>
-                <h1 className='text-center'>Quem somos?</h1>
+                <h1 className='text-3xl text-center'>Quem somos?</h1>
                 <p className='text-center'>
                     Somos estudantes da UFC campus Jardins de Anita em Itapagé.
                     Atualmente estamos no 3º semestre e desenvolvemos esse site

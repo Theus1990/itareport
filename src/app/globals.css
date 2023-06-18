@@ -216,3 +216,11 @@ footer {
     color: #0089a5;
 }
  
+
+/*************** LANDINGPAGE ***************/
+
+.cta-img{
+    width: 65%;
+    border: solid black 2px;
+
+}
