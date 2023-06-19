@@ -220,7 +220,16 @@ footer {
 /*************** LANDINGPAGE ***************/
 
 .cta-img{
-    width: 65%;
+    min-height: 700px;
+    max-height: 700px ;
+    min-width: 90%;
+    max-width: 90%;
     border: solid black 2px;
+
+}
+
+.cta-bottom:hover {
+    transition: 0.5s;
+    font-size: 2rem;
 
 }
