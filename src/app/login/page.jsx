@@ -21,11 +21,9 @@ export default function Login() {
         const hashedPassword = hashPassword(password)
 
         axios
-            .get("http://localhost:3030/user", {
-                data: {
-                    email,
-                    password: hashedPassword
-                }
+            .post("http://localhost:3030/user/login", {
+                email,
+                password: hashedPassword
             })
             .then((response) => {
                 console.log(response.data)
