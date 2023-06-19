@@ -1,39 +1,46 @@
 "use client"
 
 import { React, useState } from "react"
+import Router from "next/router"
+import axios from "axios"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import { SHA256 } from "crypto-js"
 
 export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const handleSubmit = async (event) => {
-        event.preventDefault()
+    const hashPassword = (password) => {
+        return SHA256(password).toString()
+    }
 
-        try {
-            const usuario = await prisma.usuario.findUnique({
-                where: {
-                    email: email
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const hashedPassword = hashPassword(password)
+
+        axios
+            .get("http://localhost:3030/user", {
+                data: {
+                    email,
+                    password: hashedPassword
                 }
             })
+            .then((response) => {
+                console.log(response.data)
 
-            if (!usuario) {
-                throw new Error("Usuário não encontrado")
-            }
+                if (response.data.error) {
+                    alert(response.data.message)
+                    return
+                }
 
-            if (usuario.senha !== password) {
-                throw new Error("Senha incorreta")
-            }
-
-            // Successful login
-            console.log("Login successful")
-        } catch (error) {
-            // Handle errors
-            console.error("Login failed:", error)
-        } finally {
-            await prisma.$disconnect()
-        }
+                alert("Login feito com sucesso!")
+            })
+            .catch((error) => {
+                console.log(error)
+                alert("Erro ao fazer login")
+            })
     }
 
     return (
