@@ -1,7 +1,8 @@
 "use client"
 
 import { React, useState } from "react"
-import Router from "next/router"
+// new hooks from next/navigation
+import { useRouter } from "next/navigation"
 import axios from "axios"
 import Header from "../components/header"
 import Footer from "../components/footer"
@@ -10,6 +11,7 @@ import { SHA256 } from "crypto-js"
 export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const router = useRouter()
 
     const hashPassword = (password) => {
         return SHA256(password).toString()
@@ -33,12 +35,21 @@ export default function Login() {
                     return
                 }
 
-                alert("Login feito com sucesso!")
+                //caso o sucess do res seja false ele vai cair no if
+                if (!response.data.success) {
+                    alert(response.data.message)
+                    return
+                }
+                alert("Login efetuado com sucesso")
+                router.push("/mapa")
             })
             .catch((error) => {
                 console.log(error)
                 alert("Erro ao fazer login")
             })
+
+        setEmail("")
+        setPassword("")
     }
 
     return (
