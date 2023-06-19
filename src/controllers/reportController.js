@@ -1,13 +1,14 @@
 const reportService = require("../services/reportService");
-const userService = require("../services/usuarioService");
+const adressService = require("../services/adressService");
 
 
 async function createReport(req, res) {
   try {
     const { id } = req.params;
-    const { title, content, adress } = req.body;
+    const { title, content, street, district, city } = req.body;
     
-    let report = await reportService.createReport(title, content, adress, id);
+    let adress = await adressService.insertAdress(street,district,city);
+    let report = await reportService.createReport(title, content, id, adress);
 
     return res.json({
       success: true,

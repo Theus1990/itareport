@@ -22,6 +22,16 @@ model Usuario {
   
 }
 
+model Endereco {
+  id_adress  String     @id @default(uuid()) @db.Uuid
+  street     String     @db.VarChar(100)
+  district   String     @db.VarChar(20)
+  city       String     @db.VarChar(30)
+  lat        Float      @db.Real()
+  lon        Float      @db.Real()
+  denuncias Denuncia[] 
+}
+
 model Denuncia {
   id_report   String    @id @default(uuid()) @db.Uuid
   createdAt   DateTime  @default(now())
@@ -29,9 +39,10 @@ model Denuncia {
   validated   Boolean   @default(false)
   title       String    @db.VarChar(255)
   content     String    @db.Text
-  adress      String    @db.VarChar(255)
   userId      String    @db.Uuid
+  adressId    String    @db.Uuid
   user        Usuario   @relation(fields: [userId], references: [id_user])
+  adress      Endereco  @relation(fields: [adressId], references: [id_adress])
 }
   //categoriaId String    @db.Uuid
   //enderecoId  String    @db.Uuid
@@ -46,12 +57,5 @@ model Denuncia {
 //  denuncias       Denuncia[]
 //}
 //
-//model Endereco {
-//  id_endereco  String     @id @default(uuid()) @db.Uuid
-//  rua          String     @db.VarChar(100)
-//  numero       String     @db.VarChar(5)
-//  bairro       String     @db.VarChar(20)
-//  cidade       String     @db.VarChar(30)
-//  denuncias    Denuncia[]
-//}
+
 

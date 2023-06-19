@@ -1,11 +1,11 @@
 const prismaClient = require("../db/prismaClient");
 
-async function createReport(titulo, conteudo, endereco, id) {
+async function createReport(titulo, conteudo,id, idAdress) {
   const report = await prismaClient.Denuncia.create({
     data: { title: titulo,
             content: conteudo,
-            adress: endereco,
-            userId: id },
+            userId: id,
+            adressId: idAdress },
   });
 
   return report;

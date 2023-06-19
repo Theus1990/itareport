@@ -5,7 +5,7 @@
   "scripts": {
     "dev:front": "next dev",
     "dev:back": "nodemon src/server.js",
-    "dev": "concurrently \"npm run dev:front\" \"npm run dev:back\"",
+    "dev": "npm run dev:front",
     "build": "next build",
     "lint": "next lint",
     "start:back": "node src/server.js",
