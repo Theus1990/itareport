@@ -2,9 +2,10 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 datasource db {
   provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
-  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+  url      = env("DATABASE_URL")
+  // url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  // directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  // shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
 generator client {
@@ -12,44 +13,42 @@ generator client {
 }
 
 model Usuario {
-  id_user   String      @id @default(uuid()) @db.Uuid
-  createdAt DateTime    @default(now())
-  email     String      @unique
-  cpf       String      @db.VarChar(15)
+  id_user   String     @id @default(uuid()) @db.Uuid
+  createdAt DateTime   @default(now())
+  email     String     @unique
+  cpf       String     @db.VarChar(15)
   name      String
   password  String
   denuncias Denuncia[]
-  
 }
 
 model Endereco {
-  id_adress  String     @id @default(uuid()) @db.Uuid
-  street     String     @db.VarChar(100)
-  district   String     @db.VarChar(20)
-  city       String     @db.VarChar(30)
-  lat        Float      @db.Real()
-  lon        Float      @db.Real()
-  denuncias Denuncia[] 
+  id_adress String     @id @default(uuid()) @db.Uuid
+  street    String     @db.VarChar(100)
+  district  String     @db.VarChar(20)
+  city      String     @db.VarChar(30)
+  lat       Float      @db.Real()
+  lon       Float      @db.Real()
+  denuncias Denuncia[]
 }
 
 model Denuncia {
-  id_report   String    @id @default(uuid()) @db.Uuid
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  validated   Boolean   @default(false)
-  title       String    @db.VarChar(255)
-  content     String    @db.Text
-  userId      String    @db.Uuid
-  adressId    String    @db.Uuid
-  user        Usuario   @relation(fields: [userId], references: [id_user])
-  adress      Endereco  @relation(fields: [adressId], references: [id_adress])
+  id_report String   @id @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  validated Boolean  @default(false)
+  title     String   @db.VarChar(255)
+  content   String   @db.Text
+  userId    String   @db.Uuid
+  addressId String   @db.Uuid
+  user      Usuario  @relation(fields: [userId], references: [id_user])
+  address   Endereco @relation(fields: [addressId], references: [id_adress])
 }
-  //categoriaId String    @db.Uuid
-  //enderecoId  String    @db.Uuid
-  //Categoria   Categoria @relation(fields: [categoriaId], references: [id_report])
-  //Endereco    Endereco  @relation(fields: [enderecoId], references: [id_endereco])
 
-
+//categoriaId String    @db.Uuid
+//enderecoId  String    @db.Uuid
+//Categoria   Categoria @relation(fields: [categoriaId], references: [id_report])
+//Endereco    Endereco  @relation(fields: [enderecoId], references: [id_endereco])
 
 //model Categoria {
 //  id_report       String     @id @default(uuid()) @db.Uuid
@@ -57,5 +56,3 @@ model Denuncia {
 //  denuncias       Denuncia[]
 //}
 //
-
-
