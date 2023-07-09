@@ -2,20 +2,32 @@
 
 import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import { React, useEffect, useState } from "react"
+import axios from "axios"
 
 export default function Map() {
-    const position = [-3.6836, -39.5816]
+    const [markersData, setMarkersData] = useState([])
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:3030/reports")
+            .then((response) => setMarkersData(response.data.data))
+            .catch((error) => console.error("Error:", error))
+    }, [])
+
     const pin = L.icon({
         iconUrl: "pinmap.svg",
-        iconSize: [32, 32],
-        iconAnchor: [24, 48],
-        popupAnchor: [0, -48]
+        iconSize: [20, 20],
+        iconAnchor: [17, 20],
+        popupAnchor: [17, -48]
     })
+
+    console.log(markersData)
 
     return (
         <MapContainer
-            center={position}
-            zoom={13}
+            center={[-3.9, -39.5]}
+            zoom={10}
             scrollWheelZoom={true}
             minZoom={3}
         >
@@ -23,17 +35,22 @@ export default function Map() {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
             />
-            <Marker position={position} icon={pin}>
-                <Popup
-                    closeButton={false}
-                    minWidth={240}
-                    maxWidth={240}
-                    className='map-popup'
-                >
-                    <h3>title</h3>
-                    <p>description</p>
-                </Popup>
-            </Marker>
+            {
+                //associate the report to the adress that have the id equal to the report adress id
+                //get the data from the json file and create a marker for each one
+                markersData.map((report) => (
+                    <Marker
+                        key={report.id_report}
+                        position={[report.lng, report.lat]}
+                        icon={pin}
+                    >
+                        <Popup>
+                            <h3>{report.title}</h3>
+                            <p>{report.content}</p>
+                        </Popup>
+                    </Marker>
+                ))
+            }
         </MapContainer>
     )
 }
