@@ -9,16 +9,32 @@ import axios from "axios"
 
 export default function Forms() {
     const [title, setTitle] = useState("")
-    const [content, setContent] = useState(">:(")
+    const [content, setContent] = useState("")
     const [id, setId] = useState("7fbd96fd-130d-42ab-b0b8-de1d85311629")
     const [idCat, setIdCat] = useState("b43aab14-8f98-4614-98c9-6bd0e1419da8")
-    const [street, setStreet] = useState(">:(")
-    const [district, setDistrict] = useState(">:(")
+    const [street, setStreet] = useState("")
+    const [district, setDistrict] = useState("")
     const [city, setCity] = useState("")
     const { markerData, setMarkerData } = useGlobalContext()
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        if (markerData[0] === "" || markerData[1] === "") {
+            alert("Selecione um local no mapa")
+            return
+        }
+
+        if (
+            title === "" ||
+            content === "" ||
+            street === "" ||
+            district === "" ||
+            city === ""
+        ) {
+            alert("Preencha todos os campos")
+            return
+        }
 
         axios
             .post("http://localhost:3030/report", {
@@ -37,6 +53,9 @@ export default function Forms() {
 
                 if (response.data) {
                     alert(response.data.message)
+                    if (response.data.error) {
+                        return
+                    }
                 }
             })
             .catch((error) => {

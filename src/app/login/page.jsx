@@ -40,7 +40,7 @@ export default function Login() {
                     alert(response.data.message)
                     return
                 }
-                alert("Login efetuado com sucesso")
+                alert(response.data.message)
                 router.push("/mapa")
             })
             .catch((error) => {

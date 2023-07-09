@@ -17,9 +17,9 @@ export default function Map() {
 
     const pin = L.icon({
         iconUrl: "pinmap.svg",
-        iconSize: [24, 24],
-        iconAnchor: [24, 24],
-        popupAnchor: [0, -48]
+        iconSize: [20, 20],
+        iconAnchor: [17, 20],
+        popupAnchor: [17, -48]
     })
 
     console.log(markersData)
