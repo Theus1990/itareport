@@ -1,39 +1,55 @@
 "use client"
 
 import { React, useState } from "react"
+// new hooks from next/navigation
+import { useRouter } from "next/navigation"
+import axios from "axios"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import { SHA256 } from "crypto-js"
 
 export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const router = useRouter()
 
-    const handleSubmit = async (event) => {
-        event.preventDefault()
+    const hashPassword = (password) => {
+        return SHA256(password).toString()
+    }
 
-        try {
-            const usuario = await prisma.usuario.findUnique({
-                where: {
-                    email: email
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const hashedPassword = hashPassword(password)
+
+        axios
+            .post("http://localhost:3030/user/login", {
+                email,
+                password: hashedPassword
+            })
+            .then((response) => {
+                console.log(response.data)
+
+                if (response.data.error) {
+                    alert(response.data.message)
+                    return
                 }
+
+                //caso o sucess do res seja false ele vai cair no if
+                if (!response.data.success) {
+                    alert(response.data.message)
+                    return
+                }
+                alert(response.data.message)
+                router.push("/mapa")
+            })
+            .catch((error) => {
+                console.log(error)
+                alert("Erro ao fazer login")
             })
 
-            if (!usuario) {
-                throw new Error("Usuário não encontrado")
-            }
-
-            if (usuario.senha !== password) {
-                throw new Error("Senha incorreta")
-            }
-
-            // Successful login
-            console.log("Login successful")
-        } catch (error) {
-            // Handle errors
-            console.error("Login failed:", error)
-        } finally {
-            await prisma.$disconnect()
-        }
+        setEmail("")
+        setPassword("")
     }
 
     return (
