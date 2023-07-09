@@ -16,7 +16,7 @@ export default function Map() {
             iconUrl: "pinmap.svg",
             iconSize: [32, 32],
             iconAnchor: [16, 16],
-            popupAnchor: [0, -48]
+            popupAnchor: [0, -20]
         })
     
         const map = useMap();
@@ -50,7 +50,7 @@ export default function Map() {
     return (
         <MapContainer
             center={[-3.6906281127994665, -39.57835150669607]}
-            zoom={13}
+            zoom={18}
             scrollWheelZoom
             style={{ height: "100vh" }}
         >
