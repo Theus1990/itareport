@@ -1,18 +1,21 @@
 "use client"
 
-import { React, useState } from "react"
+import { React, useEffect, useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import ReportFormMap from "../components/formMap"
+import { useGlobalContext } from "../context/store"
 import axios from "axios"
 
 export default function Forms() {
-    const [title, setTitle] = useState("teste")
-    const [content, setContent] = useState("teste")
-    const [id, setId] = useState("4e266564-ed82-4233-8810-040e323d2350")
-    const [idCat, setIdCat] = useState("43116f59-0b4d-4da6-a8a4-3e82b87969be")
-    const [street, setStreet] = useState("teste")
-    const [district, setDistrict] = useState("teste")
-    const [city, setCity] = useState("teste")
+    const [title, setTitle] = useState("")
+    const [content, setContent] = useState(">:(")
+    const [id, setId] = useState("7fbd96fd-130d-42ab-b0b8-de1d85311629")
+    const [idCat, setIdCat] = useState("b43aab14-8f98-4614-98c9-6bd0e1419da8")
+    const [street, setStreet] = useState(">:(")
+    const [district, setDistrict] = useState(">:(")
+    const [city, setCity] = useState("")
+    const { markerData, setMarkerData } = useGlobalContext()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -25,17 +28,16 @@ export default function Forms() {
                 idCat,
                 street,
                 district,
-                city
+                city,
+                lat: markerData[1],
+                lng: markerData[0]
             })
             .then((response) => {
                 console.log(response.data)
 
-                if (response.data.error) {
+                if (response.data) {
                     alert(response.data.message)
-                    return
                 }
-
-                alert("Denúncia cadastrada com sucesso")
             })
             .catch((error) => {
                 console.log(error)
@@ -45,8 +47,8 @@ export default function Forms() {
 
     return (
         <>
-            <div className='create-report'>
-                <Header />
+            <Header />
+            <div className='grid grid-cols-2'>
                 <form
                     className='flex justify-center items-center pt-36 pb-36'
                     onSubmit={handleSubmit}
@@ -85,7 +87,7 @@ export default function Forms() {
                                 className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
                                 placeholder='Descreva a denúncia...'
                                 value={content}
-                                onChange={(e) => setContent(e.target.content)}
+                                onChange={(e) => setContent(e.target.value)}
                             />
                         </div>
                         <div className='mt-3 col-span-2 grid grid-cols-12 gap-3'>
@@ -102,7 +104,7 @@ export default function Forms() {
                                     className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
                                     placeholder='Digite o endereço da denúncia...'
                                     value={street}
-                                    onChange={(e) => setStreet(e.target.street)}
+                                    onChange={(e) => setStreet(e.target.value)}
                                 />
                             </div>
                             <div className='col-span-4'>
@@ -134,7 +136,7 @@ export default function Forms() {
                                 className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
                                 placeholder='Digite a cidade...'
                                 value={city}
-                                onChange={(e) => setCity(e.target.city)}
+                                onChange={(e) => setCity(e.target.value)}
                             />
                         </div>
                         <div className='mt-3'>
@@ -150,22 +152,14 @@ export default function Forms() {
                                 className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
                                 placeholder='Digite seu e-Mail...'
                                 value={district}
-                                onChange={(e) => setDistrict(e.target.district)}
+                                onChange={(e) => setDistrict(e.target.value)}
                             />
                         </div>
                         <div className='mt-3 flex justify-between items-center col-span-2'>
                             <div className='block text-base mb-2'>
-                                <label
-                                    htmlFor='inputImagem'
-                                    className='form-label'
-                                >
-                                    Insira uma imagem do report abaixo:
-                                </label>
-                                <input
-                                    type='file'
-                                    className='form-control'
-                                    id='inputImagem'
-                                />
+                                <p>
+                                    Selecione a localização da denúncia ao lado
+                                </p>
                             </div>
                         </div>
                         <div className='mt-5 col-span-2'>
@@ -178,8 +172,9 @@ export default function Forms() {
                         </div>
                     </div>
                 </form>
-                <Footer />
+                <ReportFormMap />
             </div>
+            <Footer />
         </>
     )
 }
