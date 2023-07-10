@@ -2,9 +2,13 @@
 
 import Header from "../components/header"
 import Footer from "../components/footer"
+import Loading from "../components/loading"
 import dynamic from "next/dynamic"
 
-const DynamicMap = dynamic(() => import("../components/map"), { ssr: false })
+// use a loading component while the map is loading
+const DynamicMap = dynamic(() => import("../components/map"), {
+    loading: () => <Loading />
+})
 
 export default function Mapa() {
     return (
