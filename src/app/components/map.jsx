@@ -12,7 +12,10 @@ export default function Map() {
         axios
             .get("http://localhost:3030/reports")
             .then((response) => setMarkersData(response.data.data))
-            .catch((error) => console.error("Error:", error))
+            .catch((error) => {
+                console.error("Error:", error)
+                setError("An error occurred while loading the markers.")
+            })
     }, [])
 
     const pin = L.icon({
@@ -25,32 +28,34 @@ export default function Map() {
     console.log(markersData)
 
     return (
-        <MapContainer
-            center={[-3.9, -39.5]}
-            zoom={10}
-            scrollWheelZoom={true}
-            minZoom={3}
-        >
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-            />
-            {
-                //associate the report to the adress that have the id equal to the report adress id
-                //get the data from the json file and create a marker for each one
-                markersData.map((report) => (
-                    <Marker
-                        key={report.id_report}
-                        position={[report.lng, report.lat]}
-                        icon={pin}
-                    >
-                        <Popup>
-                            <h3>{report.title}</h3>
-                            <p>{report.content}</p>
-                        </Popup>
-                    </Marker>
-                ))
-            }
-        </MapContainer>
+        <div>
+            {!markersData ? (
+                <div>Erro: Recarregue a página</div>
+            ) : (
+                <MapContainer
+                    center={[-3.9, -39.5]}
+                    zoom={10}
+                    scrollWheelZoom={true}
+                    minZoom={3}
+                >
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                    />
+                    {markersData.map((report) => (
+                        <Marker
+                            key={report.id_report}
+                            position={[report.lng, report.lat]}
+                            icon={pin}
+                        >
+                            <Popup>
+                                <h3>{report.title}</h3>
+                                <p>{report.content}</p>
+                            </Popup>
+                        </Marker>
+                    ))}
+                </MapContainer>
+            )}
+        </div>
     )
 }

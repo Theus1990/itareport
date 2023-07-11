@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
 
 const GlobalContext = createContext({
     userId: "",
@@ -10,12 +10,23 @@ const GlobalContext = createContext({
 })
 
 export const GlobalContextProvider = ({ children }) => {
-    const [userId, setUserId] = useState("")
+    const [userId, setUserId] = useState(
+        window.localStorage.getItem("userId") || ""
+    )
     const [markerData, setMarkerData] = useState(["", ""])
+
+    useEffect(() => {
+        window.localStorage.setItem("userId", userId)
+    }, [userId])
+
+    const logout = () => {
+        setUserId("")
+        window.localStorage.removeItem("userId")
+    }
 
     return (
         <GlobalContext.Provider
-            value={{ userId, setUserId, markerData, setMarkerData }}
+            value={{ userId, setUserId, markerData, setMarkerData, logout }}
         >
             {children}
         </GlobalContext.Provider>
