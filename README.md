@@ -19,7 +19,7 @@ Nosso projeto possibilita que o usuário possa fazer reports/denúncias, com o i
 
 Liste as principais entidades do sistema.
 - Usuario
-- Report
+- Denuncia
 - Categoria
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
@@ -91,4 +91,4 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 ## Documentação
 * [Documento de visão do projeto](https://github.com/anderson-uchoa/github-template-projeto-integrador/blob/main/docs/documento_visao.docx)
 * [Regras gerais da disciplina](https://github.com/anderson-uchoa/github-template-projeto-integrador/blob/main/docs/regras_gerais.pdf)
-* [Apresentação do Projeto] - Vídeo a ser criado
+* [Apresentação do Projeto](https://youtu.be/-6jF9T1i58k)
