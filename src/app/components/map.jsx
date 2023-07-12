@@ -34,7 +34,6 @@ export default function Map() {
                 .then((response) => setMarkersData(response.data.data))
                 .catch((error) => {
                     console.error("Error:", error)
-                    setError("An error occurred while loading the markers.")
                 })
         } else {
             axios
@@ -44,7 +43,6 @@ export default function Map() {
                 })
                 .catch((error) => {
                     console.error("Error:", error)
-                    setError("An error occurred while loading the markers.")
                 })
         }
     }, [idCat])
