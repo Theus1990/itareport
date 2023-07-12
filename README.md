@@ -20,8 +20,6 @@ Nosso projeto possibilita que o usuário possa fazer reports/denúncias, com o i
 Liste as principais entidades do sistema.
 - Usuario
 - Report
-- Endereco
-- Imagem
 - Categoria
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
@@ -32,19 +30,15 @@ Descreve ou liste brevemente as principais funcionalidades da aplicação que se
 - Cadastrar
 - Logar
 - Visualizar denúncias
+- Filtrar denúncia
 
 > Usuários Logados:
 - Criar uma denúncia
-- Confirmar uma denúcia
 - Recuperar senha
-- Filtrar denúncia
-
-----
-
-:warning::warning::warning: As informações a seguir devem ser enviadas juntamente com a versão final do projeto. :warning::warning::warning:
 
 
 ----
+
 
 ## :desktop_computer: Tecnologias e frameworks utilizados
 
@@ -52,13 +46,17 @@ Descreve ou liste brevemente as principais funcionalidades da aplicação que se
 
 Lista as tecnologias, frameworks e bibliotecas utilizados.
 - React
-- Bootstrap
-- MDB React
-- Google Maps API for React
+- Tailwindcss
+- Next.js
+- React leaflet
 
 **Backend:**
 
 Lista as tecnologias, frameworks e bibliotecas utilizados.
+- Prisma
+- Nodemon
+- Vercel Postgres
+- Node.js
 
 
 ## :shipit: Operações implementadas para cada entidade da aplicação
@@ -66,9 +64,9 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 | Entidade| Criação | Leitura | Atualização | Remoção |
 | --- | --- | --- | --- | --- |
-| Entidade 1 | X |  X  |  | X |
-| Entidade 2 | X |    |  X | X |
-| Entidade 3 | X |    |  |  |
+| Usuario | X |  X  | X | X |
+| Denuncia | X |  X |  X | X |
+| Categoria | X | X |  |  |
 
 > Lembre-se que é necessário implementar o CRUD de pelo menos duas entidades.
 
@@ -76,8 +74,19 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 | Método HTTP | URL |
 | --- | --- |
-| GET | api/entidade1/|
-| POST | api/entidade2 |
+| GET | /users | 
+| GET | /user/{id_user} |
+| GET | /reports |
+| GET | /report/{id_report} |
+| GET | /category |
+| GET | /category/{id_category} |
+| POST | /user |
+| POST | /report |
+| POST | /category/{id_user} |
+| PUT | /user/{id_user} |
+| PUT | /report/{id_report} |
+| DEL | /user/{id_user} |
+| DEL | /report/{id_report} |
 
 ## Documentação
 * [Documento de visão do projeto](https://github.com/anderson-uchoa/github-template-projeto-integrador/blob/main/docs/documento_visao.docx)
