@@ -78,6 +78,15 @@ body {
     display: none;
 }
 
+.loading {
+    height: 90vh;
+    width: 100vw;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
 /*************** LOGIN & REGISTRO ***************/
 
 .form-login {
@@ -154,4 +163,71 @@ footer {
     text-align: center;
     font-size: 14px;
     line-height: 50px;
+}
+
+/*************** PAGE sobre ***************/
+.card-group {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    margin-top: 5%;
+    padding-top: 5%;
+}
+
+.card-eric {
+    width: 20%;
+    display: inline-block;
+    padding: 5% 5% 5% 5%;
+    min-width: 20%;
+    margin-left: 15%;
+}
+
+.card-lucas {
+    width: 20%;
+    display: inline-block;
+    padding: 5% 5% 5% 5%;
+    min-width: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.card-matheus {
+    width: 20%;
+    display: inline-block;
+    padding: 5% 5% 5% 5%;
+    min-width: 20%;
+    margin-right: 15%;
+    position: relative;
+}
+
+.card-body {
+    width: 100%;
+}
+
+.card-title {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.card-text {
+    margin-block-end: 5%;
+}
+
+.link {
+    color: #0089a5;
+}
+
+/*************** LANDINGPAGE ***************/
+
+.cta-img {
+    min-height: 700px;
+    max-height: 700px;
+    min-width: 90%;
+    max-width: 90%;
+    border: solid black 2px;
+}
+
+.cta-bottom:hover {
+    transition: 0.5s;
+    font-size: 2rem;
 }
