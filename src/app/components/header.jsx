@@ -1,15 +1,18 @@
 "use client"
 
 import { use, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { useGlobalContext } from "../context/store"
 import { verify } from "crypto"
 
 function Header() {
     const { userId, logout } = useGlobalContext()
+    const router = useRouter()
 
     const handleLogout = (event) => {
         event.preventDefault()
         logout()
+        router.push("/")
     }
 
     return (
@@ -21,7 +24,7 @@ function Header() {
                 {userId === null || userId === "" ? (
                     <>
                         <a href='/login' className='text-white'>
-                            Logar
+                            Login
                         </a>
                         <a
                             href='/cadastrar'
@@ -32,7 +35,10 @@ function Header() {
                     </>
                 ) : (
                     <>
-                        <a href='/formDenuncia/' className='text-white'>
+                        <a
+                            href='/formDenuncia/'
+                            className='text-white rounded-md border border-slate-100 p-2 hover:bg-slate-100 hover:text-gray-900 transition duration-100 ease-in-out'
+                        >
                             Fazer Denúncia
                         </a>
                         <a
@@ -40,7 +46,7 @@ function Header() {
                             className='text-white'
                             onClick={handleLogout}
                         >
-                            Logout
+                            Sair
                         </a>
                     </>
                 )}

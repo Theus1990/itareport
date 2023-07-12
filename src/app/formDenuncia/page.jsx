@@ -1,6 +1,7 @@
 "use client"
 
-import { React, useEffect, useState } from "react"
+import { React, use, useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import ReportFormMap from "../components/formMap"
@@ -10,12 +11,23 @@ import axios from "axios"
 export default function Forms() {
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
-    const [id, setId] = useState("7fbd96fd-130d-42ab-b0b8-de1d85311629")
-    const [idCat, setIdCat] = useState("b43aab14-8f98-4614-98c9-6bd0e1419da8")
+    const [idCat, setIdCat] = useState("")
     const [street, setStreet] = useState("")
     const [district, setDistrict] = useState("")
     const [city, setCity] = useState("")
-    const { markerData, setMarkerData } = useGlobalContext()
+    const { markerData, setMarkerData, userId } = useGlobalContext()
+    const [categories, setCategories] = useState([])
+    const router = useRouter()
+
+    useEffect(() => {
+        axios.get("http://localhost:3030/category").then((response) => {
+            setCategories(response.data.data)
+        })
+    }, [])
+
+    useEffect(() => {
+        console.log(idCat)
+    }, [idCat])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -30,6 +42,7 @@ export default function Forms() {
             content === "" ||
             street === "" ||
             district === "" ||
+            idCat === "" ||
             city === ""
         ) {
             alert("Preencha todos os campos")
@@ -40,7 +53,7 @@ export default function Forms() {
             .post("http://localhost:3030/report", {
                 title,
                 content,
-                id,
+                id: userId,
                 idCat,
                 street,
                 district,
@@ -56,6 +69,7 @@ export default function Forms() {
                     if (response.data.error) {
                         return
                     }
+                    router.push("/mapa")
                 }
             })
             .catch((error) => {
@@ -121,24 +135,36 @@ export default function Forms() {
                                     type='text'
                                     id='cpf'
                                     className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
-                                    placeholder='Digite o endereço da denúncia...'
+                                    placeholder='Digite o endereço...'
                                     value={street}
                                     onChange={(e) => setStreet(e.target.value)}
                                 />
                             </div>
                             <div className='col-span-4'>
                                 <label
-                                    htmlFor='cpf'
+                                    htmlFor='category'
                                     className='block text-base mb-2'
                                 >
                                     Categoria
                                 </label>
-                                <input
-                                    type='text'
-                                    id='cpf'
+                                <select
+                                    id='category'
                                     className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
-                                    placeholder='Digite seu e-Mail...'
-                                />
+                                    value={idCat}
+                                    onChange={(e) => setIdCat(e.target.value)}
+                                >
+                                    <option value=''>
+                                        Selecione a categoria
+                                    </option>
+                                    {categories.map((category) => (
+                                        <option
+                                            key={category.id_categoria}
+                                            value={category.id_categoria}
+                                        >
+                                            {category.nome_categoria}
+                                        </option>
+                                    ))}
+                                </select>
                             </div>
                         </div>
 
@@ -169,7 +195,7 @@ export default function Forms() {
                                 type='text'
                                 id='cpf'
                                 className='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
-                                placeholder='Digite seu e-Mail...'
+                                placeholder='Digite o bairro...'
                                 value={district}
                                 onChange={(e) => setDistrict(e.target.value)}
                             />
