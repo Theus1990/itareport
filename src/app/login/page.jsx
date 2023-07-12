@@ -6,11 +6,13 @@ import { useRouter } from "next/navigation"
 import axios from "axios"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import { useGlobalContext } from "../context/store"
 import { SHA256 } from "crypto-js"
 
 export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const { userId, setUserId } = useGlobalContext("")
     const router = useRouter()
 
     const hashPassword = (password) => {
@@ -40,8 +42,10 @@ export default function Login() {
                     alert(response.data.message)
                     return
                 }
+                const id_user = response.data.data.id_user
+                setUserId(id_user)
                 alert(response.data.message)
-                router.push("/mapa")
+                router.push("/")
             })
             .catch((error) => {
                 console.log(error)

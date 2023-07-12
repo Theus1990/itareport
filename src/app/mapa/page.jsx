@@ -7,7 +7,8 @@ import dynamic from "next/dynamic"
 
 // use a loading component while the map is loading
 const DynamicMap = dynamic(() => import("../components/map"), {
-    loading: () => <Loading />
+    loading: () => <Loading />,
+    ssr: false
 })
 
 export default function Mapa() {
